@@ -4,8 +4,6 @@ import 'dart:convert';
 import '/models/catalog.dart';
 import '/widgets/home_widgets/catalog_header.dart';
 import '/widgets/home_widgets/catalog_list.dart';
-// import 'package:codepur/pages/home_widgets/catalog_header.dart';
-// import 'package:codepur/pages/home_widgets/catalog_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -34,10 +32,6 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
-  //  colors
-
-  // static Color creamColor = Color(0xfff5f5f5);
-  // static Color darkBluishColor = Color(0xff403b58);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

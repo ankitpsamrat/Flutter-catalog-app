@@ -5,10 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomeDetailPage extends StatelessWidget {
-  // const HomeDetailPage({Key? key}) : super(key: key);
-
   final Item catalog;
-
   const HomeDetailPage({Key? key, required this.catalog})
       : assert(catalog != null),
         super(key: key);

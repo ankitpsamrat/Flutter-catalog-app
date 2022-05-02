@@ -1,14 +1,10 @@
 import '/models/catalog.dart';
 import '/pages/home_detail_page.dart';
 import '/widgets/home_widgets/catalog_image.dart';
-// import 'package:codepur/pages/home_widgets/catalog_image.dart';
-// import 'package:codepur/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CatalogList extends StatelessWidget {
-  // const CatalogList({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
