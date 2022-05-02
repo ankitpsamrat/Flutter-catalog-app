@@ -1,12 +1,14 @@
-// ignore_for_file: unnecessary_null_comparison
+// ignore_for_file: unnecessary_null_comparison, deprecated_member_use
 
-import 'dart:convert';
-import '/models/catalog.dart';
-import '/widgets/home_widgets/catalog_header.dart';
-import '/widgets/home_widgets/catalog_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:flutter/cupertino.dart';
+import 'dart:convert';
+import '/utils/routes.dart';
+import '/models/catalog.dart';
+import '/widgets/home_widgets/catalog_header.dart';
+import '/widgets/home_widgets/catalog_list.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -35,6 +37,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+        child: Icon(CupertinoIcons.cart),
+      ),
       body: SafeArea(
         child: Container(
           padding: Vx.m32,
@@ -43,7 +49,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               CatalogHeader(),
               if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-                CatalogList().expand()
+                CatalogList().py16().expand()
               else
                 CircularProgressIndicator().centered().expand(),
             ],

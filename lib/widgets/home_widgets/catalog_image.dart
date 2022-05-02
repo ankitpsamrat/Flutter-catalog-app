@@ -11,3 +11,4 @@ class CatalogImage extends StatelessWidget {
     ).box.p1.color(Colors.white).make().p16().w40(context);
   }
 }
+

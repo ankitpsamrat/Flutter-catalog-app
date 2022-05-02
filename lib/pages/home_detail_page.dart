@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_null_comparison
+// ignore_for_file: unnecessary_null_comparison, deprecated_member_use
 
 import '/models/catalog.dart';
 import 'package:flutter/material.dart';
@@ -13,21 +13,25 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: ButtonBar(
-        alignment: MainAxisAlignment.spaceBetween,
-        buttonPadding: Vx.mH8,
-        children: [
-          '\$${catalog.price}'.text.bold.xl4.color(Colors.red).make(),
-          ElevatedButton(
-            onPressed: () {},
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.black),
-              shape: MaterialStateProperty.all(StadiumBorder()),
-            ),
-            child: 'Buy'.text.make(),
-          ).wh(100, 50),
-        ],
-      ).p32(),
+      backgroundColor: Colors.transparent,
+      bottomNavigationBar: Container(
+        color: Colors.white,
+        child: ButtonBar(
+          alignment: MainAxisAlignment.spaceBetween,
+          buttonPadding: Vx.mH8,
+          children: [
+            '\$${catalog.price}'.text.bold.xl4.red800.make(),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.black),
+                shape: MaterialStateProperty.all(StadiumBorder()),
+              ),
+              child: 'Add to cart'.text.make(),
+            ).wh(120, 50),
+          ],
+        ).p32(),
+      ),
       appBar: AppBar(),
       body: SafeArea(
         child: Column(
