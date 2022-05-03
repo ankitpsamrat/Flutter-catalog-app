@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           titleTextStyle: Theme.of(context).textTheme.headline6,
         ),
       ),
-      initialRoute: MyRoutes.loginRoute,
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         "/": (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
