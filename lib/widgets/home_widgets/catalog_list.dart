@@ -1,10 +1,11 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
+import '/widgets/home_widgets/add_to_cart.dart';
 import '/models/catalog.dart';
 import '/pages/home_detail_page.dart';
 import '/widgets/home_widgets/catalog_image.dart';
-import 'package:flutter/material.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 class CatalogList extends StatelessWidget {
   @override
@@ -61,15 +62,7 @@ class CatalogItem extends StatelessWidget {
                         .xl
                         .color(Colors.black)
                         .make(),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.black),
-                        shape: MaterialStateProperty.all(StadiumBorder()),
-                      ),
-                      child: 'Add to cart'.text.make(),
-                    ),
+                    AddToCart(catalog: catalog),
                   ],
                 ),
               ],
