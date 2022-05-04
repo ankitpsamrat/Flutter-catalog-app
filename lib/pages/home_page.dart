@@ -1,5 +1,7 @@
 // ignore_for_file: unnecessary_null_comparison, deprecated_member_use
 
+import 'package:catalog/core/store.dart';
+import 'package:catalog/models/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -36,10 +38,20 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    VxState.watch(context, on: [AddMutation, RemoveMutation]);
+    final _cart = (VxState.store as MyStore).cart;
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
         child: Icon(CupertinoIcons.cart),
+      ).badge(
+        color: Colors.redAccent,
+        size: 20,
+        count: _cart.items.length,
+        textStyle: TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       body: SafeArea(
         child: Container(
