@@ -1,13 +1,11 @@
+// ignore_for_file: null_closures
+
 class CatalogModel {
-
-
   static List<Item> items = <Item>[];
-
   Item getById(int id) => items.firstWhere(
         (element) => element.id == id,
         orElse: null,
       );
-
   Item getByPosition(int pos) => items[pos];
 }
 
@@ -18,7 +16,6 @@ class Item {
   final num price;
   final String color;
   final String image;
-
   Item({
     required this.id,
     required this.name,
@@ -27,7 +24,6 @@ class Item {
     required this.color,
     required this.image,
   });
-
   factory Item.fromMap(Map<String, dynamic> map) {
     return Item(
       id: map['id'],

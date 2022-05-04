@@ -22,7 +22,9 @@ class HomeDetailPage extends StatelessWidget {
           buttonPadding: Vx.mH8,
           children: [
             '\$${catalog.price}'.text.bold.xl4.color(Colors.redAccent).make(),
-            AddToCart(catalog: catalog,).wh(120, 50),
+            AddToCart(
+              catalog: catalog,
+            ).wh(120, 50),
           ],
         ).p32(),
       ),
@@ -32,7 +34,9 @@ class HomeDetailPage extends StatelessWidget {
           children: [
             Hero(
               tag: Key(catalog.id.toString()),
-              child: Image.network(catalog.image),
+              child: Image.network(
+                catalog.image,
+              ),
             ).h48(context),
             Expanded(
               child: VxArc(

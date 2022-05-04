@@ -1,5 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:velocity_x/velocity_x.dart';
+
 import '/utils/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
         changeButton = true;
       });
       await Future.delayed(Duration(seconds: 1));
-      await Navigator.pushNamed(context, MyRoutes.homeRoute);
+      await context.vxNav.push(Uri.parse(MyRoutes.homeRoute));
       setState(() {
         changeButton = false;
       });
