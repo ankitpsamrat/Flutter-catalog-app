@@ -1,9 +1,9 @@
 // ignore_for_file: unnecessary_null_comparison, deprecated_member_use
 
-import '/widgets/home_widgets/add_to_cart.dart';
-import '/models/catalog.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
+import '/widgets/home_widgets/add_to_cart.dart';
+import '/models/catalog.dart';
 
 class HomeDetailPage extends StatelessWidget {
   final Item catalog;

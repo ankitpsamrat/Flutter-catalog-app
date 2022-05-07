@@ -1,9 +1,8 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:velocity_x/velocity_x.dart';
-
-import '/utils/routes.dart';
 import 'package:flutter/material.dart';
+import '/utils/routes.dart';
 
 class LoginPage extends StatefulWidget {
   @override

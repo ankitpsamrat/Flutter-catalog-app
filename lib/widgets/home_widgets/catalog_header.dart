@@ -15,4 +15,3 @@ class CatalogHeader extends StatelessWidget {
     );
   }
 }
-
