@@ -4,6 +4,8 @@ import '/core/store.dart';
 import '/models/cart.dart';
 
 class CartPage extends StatelessWidget {
+  const CartPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +25,8 @@ class CartPage extends StatelessWidget {
 }
 
 class _CartTotal extends StatelessWidget {
+  const _CartTotal({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     VxState.watch(context, on: [RemoveMutation]);
@@ -43,8 +47,12 @@ class _CartTotal extends StatelessWidget {
               );
             },
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.black),
-              shape: MaterialStateProperty.all(StadiumBorder()),
+              backgroundColor: MaterialStateProperty.all(
+                Colors.black,
+              ),
+              shape: MaterialStateProperty.all(
+                StadiumBorder(),
+              ),
             ),
             child: 'Buy'.text.make(),
           ).wh(100, 40),
@@ -55,6 +63,8 @@ class _CartTotal extends StatelessWidget {
 }
 
 class _CartList extends StatelessWidget {
+  const _CartList({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     VxState.watch(context, on: [RemoveMutation]);

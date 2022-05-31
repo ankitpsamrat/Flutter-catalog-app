@@ -6,10 +6,13 @@ import '/widgets/home_widgets/add_to_cart.dart';
 import '/models/catalog.dart';
 
 class HomeDetailPage extends StatelessWidget {
-  final Item catalog;
-  const HomeDetailPage({Key? key, required this.catalog})
-      : assert(catalog != null),
+  const HomeDetailPage({
+    Key? key,
+    required this.catalog,
+  })  : assert(catalog != null),
         super(key: key);
+
+  final Item catalog;
 
   @override
   Widget build(BuildContext context) {

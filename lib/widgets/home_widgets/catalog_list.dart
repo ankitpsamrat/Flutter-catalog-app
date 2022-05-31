@@ -8,6 +8,8 @@ import '/pages/home_detail_page.dart';
 import '/widgets/home_widgets/catalog_image.dart';
 
 class CatalogList extends StatelessWidget {
+  const CatalogList({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -30,8 +32,12 @@ class CatalogList extends StatelessWidget {
 }
 
 class CatalogItem extends StatelessWidget {
+  const CatalogItem({
+    Key? key,
+    required this.catalog,
+  }) : super(key: key);
+
   final Item catalog;
-  const CatalogItem({Key? key, required this.catalog}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

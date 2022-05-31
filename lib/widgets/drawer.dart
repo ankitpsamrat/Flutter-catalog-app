@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
+  const MyDrawer({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -14,10 +16,16 @@ class MyDrawer extends StatelessWidget {
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                accountName: Text('Samrat'),
-                accountEmail: Text('ankit.p.samrat@gmail.com'),
+                accountName: Text(
+                  'Samrat',
+                ),
+                accountEmail: Text(
+                  'ankit.p.samrat@gmail.com',
+                ),
                 currentAccountPicture: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/mypic.png'),
+                  backgroundImage: AssetImage(
+                    'assets/images/mypic.png',
+                  ),
                 ),
               ),
             ),

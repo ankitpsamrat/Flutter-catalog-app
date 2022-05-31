@@ -19,8 +19,12 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         changeButton = true;
       });
-      await Future.delayed(Duration(seconds: 1));
-      await context.vxNav.push(Uri.parse(MyRoutes.homeRoute));
+      await Future.delayed(
+        Duration(seconds: 1),
+      );
+      await context.vxNav.push(
+        Uri.parse(MyRoutes.homeRoute),
+      );
       setState(() {
         changeButton = false;
       });
@@ -40,9 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                 'assets/images/login2.png',
                 fit: BoxFit.cover,
               ),
-              SizedBox(
-                height: 20,
-              ),
+              SizedBox(height: 20),
               Text(
                 'Welcome $name',
                 style: TextStyle(
@@ -50,11 +52,9 @@ class _LoginPageState extends State<LoginPage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
+              SizedBox(height: 20),
               Padding(
-                padding: const EdgeInsets.symmetric(
+                padding: EdgeInsets.symmetric(
                   vertical: 16,
                   horizontal: 32,
                 ),
@@ -91,13 +91,12 @@ class _LoginPageState extends State<LoginPage> {
                         return null;
                       },
                     ),
-                    SizedBox(
-                      height: 40,
-                    ),
+                    SizedBox(height: 40),
                     Material(
                       color: Colors.deepPurple,
-                      borderRadius:
-                          BorderRadius.circular(changeButton ? 50 : 8),
+                      borderRadius: BorderRadius.circular(
+                        changeButton ? 50 : 8,
+                      ),
                       child: InkWell(
                         onTap: () => moveToHome(context),
                         child: AnimatedContainer(

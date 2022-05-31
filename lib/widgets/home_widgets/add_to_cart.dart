@@ -6,11 +6,12 @@ import '/models/catalog.dart';
 import '/core/store.dart';
 
 class AddToCart extends StatelessWidget {
-  final Item catalog;
   const AddToCart({
     Key? key,
     required this.catalog,
   }) : super(key: key);
+
+  final Item catalog;
 
   @override
   Widget build(BuildContext context) {

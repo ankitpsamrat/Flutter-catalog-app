@@ -26,8 +26,9 @@ class _HomePageState extends State<HomePage> {
 
   loadData() async {
     await Future.delayed(Duration(seconds: 1));
-    final catalogJson =
-        await rootBundle.loadString('assets/files/catalog.json');
+    final catalogJson = await rootBundle.loadString(
+      'assets/files/catalog.json',
+    );
     final decodedData = jsonDecode(catalogJson);
     var productsData = decodedData['products'];
     CatalogModel.items = List.from(productsData)
@@ -40,10 +41,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     VxState.watch(context, on: [AddMutation, RemoveMutation]);
     final _cart = (VxState.store as MyStore).cart;
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-        child: Icon(CupertinoIcons.cart),
+        child: Icon(
+          CupertinoIcons.cart,
+        ),
       ).badge(
         color: Colors.redAccent,
         size: 20,
