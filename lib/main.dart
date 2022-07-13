@@ -10,10 +10,12 @@ import '/core/store.dart';
 
 void main() {
   setPathUrlStrategy();
-  runApp(VxState(store: MyStore(), child: MyApp()));
+  runApp(VxState(store: MyStore(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(
           color: Colors.white,
           elevation: 0,
-          iconTheme: IconThemeData(
+          iconTheme: const IconThemeData(
             color: Colors.black,
           ),
           toolbarTextStyle: Theme.of(context).textTheme.bodyText2,
@@ -34,10 +36,10 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: MyRoutes.homeRoute,
       routes: {
-        "/": (context) => LoginPage(),
-        MyRoutes.homeRoute: (context) => HomePage(),
-        MyRoutes.loginRoute: (context) => LoginPage(),
-        MyRoutes.cartRoute: (context) => CartPage(),
+        "/": (context) => const LoginPage(),
+        MyRoutes.homeRoute: (context) => const HomePage(),
+        MyRoutes.loginRoute: (context) => const LoginPage(),
+        MyRoutes.cartRoute: (context) => const CartPage(),
       },
     );
   }

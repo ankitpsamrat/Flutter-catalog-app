@@ -15,9 +15,9 @@ class CartPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          _CartList().p32().expand(),
-          Divider(),
-          _CartTotal(),
+          const _CartList().p32().expand(),
+          const Divider(),
+          const _CartTotal(),
         ],
       ),
     );
@@ -51,7 +51,7 @@ class _CartTotal extends StatelessWidget {
                 Colors.black,
               ),
               shape: MaterialStateProperty.all(
-                StadiumBorder(),
+                const StadiumBorder(),
               ),
             ),
             child: 'Buy'.text.make(),
@@ -74,11 +74,11 @@ class _CartList extends StatelessWidget {
         : ListView.builder(
             itemCount: _cart.items.length,
             itemBuilder: (context, index) => ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.done,
               ),
               trailing: IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.remove_circle_outline,
                 ),
                 onPressed: () => RemoveMutation(

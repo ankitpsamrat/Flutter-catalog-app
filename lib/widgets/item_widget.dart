@@ -29,7 +29,7 @@ class ItemWidget extends StatelessWidget {
         trailing: Text(
           '\$${item.price}',
           textScaleFactor: 1.2,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.deepPurple,
             fontWeight: FontWeight.bold,
           ),

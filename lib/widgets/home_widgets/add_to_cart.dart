@@ -31,14 +31,14 @@ class AddToCart extends StatelessWidget {
           Colors.black,
         ),
         shape: MaterialStateProperty.all(
-          StadiumBorder(),
+          const StadiumBorder(),
         ),
       ),
       child: isInCart
-          ? Icon(
+          ? const Icon(
               Icons.done,
             )
-          : Icon(
+          : const Icon(
               CupertinoIcons.cart_badge_plus,
             ),
     );

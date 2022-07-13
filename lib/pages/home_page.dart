@@ -13,6 +13,8 @@ import '/core/store.dart';
 import '/models/cart.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -25,7 +27,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
     final catalogJson = await rootBundle.loadString(
       'assets/files/catalog.json',
     );
@@ -45,14 +47,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-        child: Icon(
+        child: const Icon(
           CupertinoIcons.cart,
         ),
       ).badge(
         color: Colors.redAccent,
         size: 20,
         count: _cart.items.length,
-        textStyle: TextStyle(
+        textStyle: const TextStyle(
           color: Colors.black,
           fontWeight: FontWeight.bold,
         ),
@@ -63,11 +65,11 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CatalogHeader(),
+              const CatalogHeader(),
               if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-                CatalogList().py16().expand()
+                const CatalogList().py16().expand()
               else
-                CircularProgressIndicator().centered().expand(),
+                const CircularProgressIndicator().centered().expand(),
             ],
           ),
         ),

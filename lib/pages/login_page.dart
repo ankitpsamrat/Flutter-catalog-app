@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '/utils/routes.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -20,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
         changeButton = true;
       });
       await Future.delayed(
-        Duration(seconds: 1),
+        const Duration(seconds: 1),
       );
       await context.vxNav.push(
         Uri.parse(MyRoutes.homeRoute),
@@ -44,24 +46,28 @@ class _LoginPageState extends State<LoginPage> {
                 'assets/images/login2.png',
                 fit: BoxFit.cover,
               ),
-              SizedBox(height: 20),
+              const SizedBox(
+                height: 20,
+              ),
               Text(
                 'Welcome $name',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(
+                height: 20,
+              ),
               Padding(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   vertical: 16,
                   horizontal: 32,
                 ),
                 child: Column(
                   children: [
                     TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Enter username',
                         labelText: 'Username',
                       ),
@@ -78,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     TextFormField(
                       obscureText: true, // for hide password charactor
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Enter password',
                         labelText: 'Password',
                       ),
@@ -91,7 +97,9 @@ class _LoginPageState extends State<LoginPage> {
                         return null;
                       },
                     ),
-                    SizedBox(height: 40),
+                    const SizedBox(
+                      height: 40,
+                    ),
                     Material(
                       color: Colors.deepPurple,
                       borderRadius: BorderRadius.circular(
@@ -100,16 +108,16 @@ class _LoginPageState extends State<LoginPage> {
                       child: InkWell(
                         onTap: () => moveToHome(context),
                         child: AnimatedContainer(
-                          duration: Duration(seconds: 1),
+                          duration: const Duration(seconds: 1),
                           width: changeButton ? 50 : 150,
                           height: 40,
                           alignment: Alignment.center,
                           child: changeButton
-                              ? Icon(
+                              ? const Icon(
                                   Icons.done,
                                   color: Colors.white,
                                 )
-                              : Text(
+                              : const Text(
                                   'Login',
                                   style: TextStyle(
                                     color: Colors.white,
